@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Micheal Waltz <ecliptik@gmail.com
+MAINTAINER Micheal Waltz <ecliptik@gmail.com>
 #Thanks to https://github.com/bydavy/docker-plex/blob/master/Dockerfile and https://github.com/aostanin/docker-plex/blob/master/Dockerfile
 
 ENV DEBIAN_FRONTEND noninteractive
