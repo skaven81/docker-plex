@@ -1,5 +1,5 @@
-FROM debian:wheezy
-MAINTAINER Tim Haak <tim@haak.co.uk>
+FROM ubuntu:14.04
+MAINTAINER Micheal Waltz <ecliptik@gmail.com
 #Thanks to https://github.com/bydavy/docker-plex/blob/master/Dockerfile and https://github.com/aostanin/docker-plex/blob/master/Dockerfile
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -12,13 +12,11 @@ RUN apt-get -qy --force-yes dist-upgrade
 
 RUN apt-get install -qy --force-yes curl
 
-RUN echo "deb http://shell.ninthgate.se/packages/debian squeeze main" > /etc/apt/sources.list.d/plexmediaserver.list
-
-RUN curl http://shell.ninthgate.se/packages/shell-ninthgate-se-keyring.key | apt-key add -
+RUN curl https://downloads.plex.tv/plex-media-server/0.9.11.7.803-87d0708/plexmediaserver_0.9.11.7.803-87d0708_amd64.deb -o /var/tmp/plexmediaserver.deb
 
 RUN apt-get -q update
 
-RUN apt-get install -qy --force-yes plexmediaserver
+RUN dpkg --install --force-all /var/tmp/plexmediaserver.deb
 
 # apt clean
 RUN apt-get clean &&\
