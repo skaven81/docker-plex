@@ -14,7 +14,6 @@ RUN apt-get install -qy --force-yes curl
 
 RUN curl https://downloads.plex.tv/plex-media-server/0.9.11.16.958-80f1748/plexmediaserver_0.9.11.16.958-80f1748_amd64.deb -o /var/tmp/plexmediaserver.deb
 
-
 RUN apt-get -q update
 
 RUN dpkg --install --force-all /var/tmp/plexmediaserver.deb
