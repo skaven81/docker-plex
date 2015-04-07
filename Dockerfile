@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
-MAINTAINER Micheal Waltz <ecliptik@gmail.com
-#Thanks to https://github.com/bydavy/docker-plex/blob/master/Dockerfile and https://github.com/aostanin/docker-plex/blob/master/Dockerfile
+MAINTAINER Micheal Waltz <ecliptik@gmail.com>
+#Thanks to https://github.com/bydavy/docker-plex/blob/master/Dockerfile,  https://github.com/aostanin/docker-plex/blob/master/Dockerfile, and https://github.com/timhaak/docker-plex
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG en_US.UTF-8
