@@ -12,7 +12,7 @@ RUN apt-get -qy --force-yes dist-upgrade
 
 RUN apt-get install -qy --force-yes curl
 
-RUN curl https://downloads.plex.tv/plex-media-server/0.9.11.16.958-80f1748/plexmediaserver_0.9.11.16.958-80f1748_amd64.deb -o /var/tmp/plexmediaserver.deb
+RUN curl https://downloads.plex.tv/plex-media-server/0.9.12.0.1071-7b11cfc/plexmediaserver_0.9.12.0.1071-7b11cfc_amd64.deb -o /var/tmp/plexmediaserver.deb
 
 RUN apt-get -q update
 
