@@ -5,7 +5,7 @@ This is a Dockerfile to set up (https://plex.tv/ "Plex Media Server") - (https:/
 Build from docker file
 
 ```
-git clone git@github.com:timhaak/docker-plex.git
+git clone git@github.com:ecliptik/docker-plex.git
 cd docker-plex
 docker build -t plex .
 ```
@@ -13,8 +13,10 @@ docker build -t plex .
 You can also obtain it via:
 
 ```
-docker pull timhaak/plex
+docker pull ecliptik/docker-plex
 ```
+
+Originally from: https://github.com/timhaak/docker-plex
 
 ---
 Instructions to run:
