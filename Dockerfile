@@ -8,11 +8,13 @@ ENV DEBIAN_FRONTEND=noninteractive LANG=en_US.UTF-8 LC_ALL=C.UTF-8 LANGUAGE=en_U
 #Plex install package to download
 ENV PLEXPKG=https://downloads.plex.tv/plex-media-server/0.9.15.3.1674-f46e7e6/plexmediaserver_0.9.15.3.1674-f46e7e6_amd64.deb
 
-#Update system and install packages
-RUN [ "apt-get", "-q", "update" ]
-RUN [ "apt-get", "-qy", "--force-yes", "upgrade" ]
-RUN [ "apt-get", "-qy", "--force-yes", "dist-upgrade" ]
-RUN [ "apt-get", "install", "-qy", "--force-yes", "curl" ]
+#Update apt and system
+RUN apt-get -q update && \
+    apt-get -qy --force-yes upgrade && \
+    apt-get -qy --force-yes dist-upgrade
+
+#Install Packages
+RUN apt-get install -qy --force-yes curl
 
 #Download Plex
 RUN curl $PLEXPKG -o /var/tmp/plexmediaserver.deb
@@ -20,9 +22,9 @@ RUN curl $PLEXPKG -o /var/tmp/plexmediaserver.deb
 #Install Plex
 RUN [ "dpkg", "--install", "--force-all", "/var/tmp/plexmediaserver.deb" ]
 
-#Clean Up
+#Clean Up apt
 RUN [ "apt-get", "clean" ]
-RUN [ "rm", "-fr", "/var/lib/apt/lists/* /tmp/* /var/tmp/*" ]
+RUN [ "rm", "-fr", "/var/lib/apt/lists/* /tmp/* /var/tmp/* /var/tmp/plexmediaserver.deb" ]
 
 #Volumes
 VOLUME [ "/config" ]
