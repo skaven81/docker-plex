@@ -1,5 +1,7 @@
 # docker plex
 
+[![](https://badge.imagelayers.io/ecliptik/docker-plex:latest.svg)](https://imagelayers.io/?images=ecliptik/docker-plex:latest 'Get your own badge on imagelayers.io')
+
 This is a Dockerfile to set up (https://plex.tv/ "Plex Media Server") - (https://plex.tv/)
 
 Build from docker file
