@@ -4,7 +4,7 @@
 
 This is a Dockerfile to set up [Plex Media Server](https://plex.tv/)
 
-Building the Dockerfile
+Build using the Dockerfile
 
 ```
 git clone git@github.com:ecliptik/docker-plex.git
