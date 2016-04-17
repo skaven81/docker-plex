@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Micheal Waltz <ecliptik@gmail.com>
 #Thanks to https://github.com/bydavy/docker-plex/blob/master/Dockerfile,  https://github.com/aostanin/docker-plex/blob/master/Dockerfile, and https://github.com/timhaak/docker-plex
 
@@ -10,11 +10,11 @@ ENV PLEXPKG=https://downloads.plex.tv/plex-media-server/0.9.16.3.1840-cece46d/pl
 
 #Update apt and system
 RUN apt-get -q update && \
-    apt-get -qy --force-yes upgrade && \
-    apt-get -qy --force-yes dist-upgrade
+    apt-get -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages upgrade && \
+    apt-get -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages dist-upgrade
 
 #Install Packages
-RUN apt-get install -qy --force-yes curl
+RUN apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages curl
 
 #Download Plex
 RUN curl $PLEXPKG -o /var/tmp/plexmediaserver.deb
