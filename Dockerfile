@@ -8,12 +8,15 @@ ENV DEBIAN_FRONTEND=noninteractive LANG=en_US.UTF-8 LC_ALL=C.UTF-8 LANGUAGE=en_U
 #Plex install package to download
 ENV PLEXPKG=https://downloads.plex.tv/plex-media-server/0.9.16.4.1911-ee6e505/plexmediaserver_0.9.16.4.1911-ee6e505_amd64.deb
 
+#App Dir var
+ENV APPDIR=/app
+
 #Volumes
-VOLUME [ "/config" ]
-VOLUME [ "/data" ]
+VOLUME /config
+VOLUME /data
 
 #Set WORKDIR
-WORKDIR /app
+WORKDIR ${APPDIR}
 
 #Expose default Plex media port
 EXPOSE 32400
@@ -26,13 +29,13 @@ RUN apt-get -q update && \
     rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #Install Plex
-RUN curl -O $PLEXPKG && \
+RUN curl -O ${PLEXPKG} && \
     dpkg --install --force-all plexmediaserver_*.deb && \
     rm -fr plexmediaserver_*.deb
 
 #Copy start script and make executable
-COPY [ "./start.sh", "/app/start.sh" ]
-RUN [ "chmod", "+x",  "/app/start.sh" ]
+COPY ./start.sh .
+RUN chmod +x ./start.sh
 
 #Set entrypoint of Plex start script
 ENTRYPOINT [ "/app/start.sh" ]
