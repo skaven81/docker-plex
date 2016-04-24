@@ -14,7 +14,7 @@ RUN apt-get -q update && \
     apt-get -qy --force-yes dist-upgrade
 
 #Install Packages
-RUN apt-get install -qy --force-yes curl
+RUN apt-get install -qy --force-yes curl dbus avahi-daemon
 
 #Download Plex
 RUN curl $PLEXPKG -o /var/tmp/plexmediaserver.deb
