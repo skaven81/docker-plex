@@ -11,9 +11,6 @@ ENV PLEXPKG=https://downloads.plex.tv/plex-media-server/0.9.16.4.1911-ee6e505/pl
 #App Dir var
 ENV APPDIR=/app
 
-#Install Packages
-RUN apt-get install -qy --force-yes curl dbus avahi-daemon
-
 #Volumes
 VOLUME /config
 VOLUME /data
@@ -27,7 +24,7 @@ EXPOSE 32400
 #Update system
 RUN apt-get -q update && \
     apt-get -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages upgrade && \
-    apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages curl && \
+    apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages curl dbus avahi-daemon && \
     apt-get clean && \
     rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
