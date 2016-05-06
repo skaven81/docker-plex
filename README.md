@@ -51,4 +51,4 @@ If using the [Docker Beta](https://blog.docker.com/2016/03/docker-for-mac-window
 docker run -d -h $(hostname) -v /*your_config_location*:/config -v /*your_videos_location*:/data -p 32400:32400 plex
 ```
 
-and then in the local web browser go to [docker.local:32400/web](http://docker.local:32400/web) to access the locally running container via the `docker.local` address alias.
+and then in the local web browser go to [localhost:32400/web](http://localhost:32400/web) to access the locally running container.
