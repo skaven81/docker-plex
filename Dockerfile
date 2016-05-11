@@ -34,8 +34,8 @@ RUN curl -O ${PLEXPKG} && \
     rm -fr plexmediaserver_*.deb
 
 #Copy start script and make executable
-COPY ./start.sh .
-RUN chmod +x ./start.sh
+COPY start.sh start.sh
+RUN chmod +x start.sh
 
 #Set entrypoint of Plex start script
 ENTRYPOINT [ "/app/start.sh" ]
