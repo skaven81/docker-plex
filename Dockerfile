@@ -6,7 +6,7 @@ MAINTAINER Micheal Waltz <ecliptik@gmail.com>
 ENV DEBIAN_FRONTEND=noninteractive LANG=en_US.UTF-8 LC_ALL=C.UTF-8 LANGUAGE=en_US.UTF-8
 
 #Plex install package to download
-ENV PLEXPKG=https://downloads.plex.tv/plex-media-server/1.10.0.4523-648bc61d4/plexmediaserver_1.10.0.4523-648bc61d4_amd64.deb
+ENV PLEXPKG=https://downloads.plex.tv/plex-media-server/1.9.3.4290-9798172d4/plexmediaserver_1.9.3.4290-9798172d4_amd64.deb
 
 #App Dir var
 ENV APPDIR=/app
